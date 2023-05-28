@@ -6,7 +6,12 @@ import * as util from "ethereumjs-util";
 import contract from "../../public/contracts/NftMarket.json";
 import { NftMarketContract } from "@_types/nftMarketContract";
 
-type NETWORK = typeof contract.networks;
+
+const NETWORKS = {
+  "5777": "Ganache",
+  "11155111": "Sepolia"
+}
+type NETWORK = typeof NETWORKS;
 
 const abi = contract.abi;
 const targetNetwork = process.env.NEXT_PUBLIC_NETWORK_ID as keyof NETWORK;
@@ -25,10 +30,12 @@ export function withSession(handler: any) {
   })
 }
 
+const url = process.env.NODE_ENV === "production" ? process.env.INFURA_SEPOLIA_URL :"http://127.0.0.1:7545"
+
 export const addressCheckMiddleware = async (req: NextApiRequest & { session: Session}, res: NextApiResponse) => {
   return new Promise(async (resolve, reject) => {
     const message = req.session.get("message-session");
-    const provider = new ethers.providers.JsonRpcProvider("http://127.0.0.1:7545");
+    const provider = new ethers.providers.JsonRpcProvider(url);
     const contract = new ethers.Contract(
       contractAddress,
       abi,
