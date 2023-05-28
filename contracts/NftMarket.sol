@@ -2,8 +2,9 @@
 pragma solidity >=0.4.22 <0.9.0;
 import "../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
+import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 
-contract NftMarket is ERC721URIStorage {
+contract NftMarket is ERC721URIStorage, Ownable{
     using Counters for Counters.Counter;
 
     struct NftItem {
@@ -40,6 +41,10 @@ contract NftMarket is ERC721URIStorage {
     constructor() ERC721("TicketNFT", "TNFT"){
     }
 
+    function setListingPrice(uint newPrice) external onlyOwner {
+        require(newPrice > 0, "Price must be at least 1 wei");
+        listingPrice = newPrice;
+  }
 
     function getNftItem(uint tokenId) public view returns (NftItem memory) {
         return _idToNftItem[tokenId];
@@ -98,9 +103,6 @@ contract NftMarket is ERC721URIStorage {
         return items;
     }
 
-    function burnToken(uint tokenId) public {
-        _burn(tokenId);
-    }
 
     function mintToken(string memory tokenURI, uint price) public payable returns (uint) {
         require(!tokenURIExists(tokenURI), "Token URI has already existed");
@@ -134,6 +136,16 @@ contract NftMarket is ERC721URIStorage {
         _transfer(owner, msg.sender, tokenId);
         payable(owner).transfer(msg.value);
 
+    }
+
+    function placeNftOnSale(uint tokenId, uint newPrice) public payable {
+        require(ERC721.ownerOf(tokenId) == msg.sender, "You're not the owner of this NFT");
+        require(_idToNftItem[tokenId].isListed == false, "Item is already listed");
+        require(msg.value == listingPrice, "Please pay the correct amount");
+
+        _idToNftItem[tokenId].isListed = true;
+        _idToNftItem[tokenId].price = newPrice;
+        _listedItems.increment();
     }
 
     function _createNftItem(
