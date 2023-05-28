@@ -80,6 +80,7 @@ const Profile: NextPage = () => {
                           )}
                         >
                           <img
+                            style={{ height: '500px', width: '500px' }}
                             src={nft.meta.image}
                             alt=""
                             className={classNames(
@@ -107,7 +108,7 @@ const Profile: NextPage = () => {
               <div className="pb-16 space-y-6">
                 <div>
                   <div className="block w-full aspect-w-10 aspect-h-7 rounded-lg overflow-hidden">
-                    <img src={activeNft.meta.image} alt="" className="object-cover" />
+                    <img style={{ height: '500px', width: '500px' }} src={activeNft.meta.image} alt="" className="object-cover" />
                   </div>
                   <div className="mt-4 flex items-start justify-between">
                     <div>

@@ -8,19 +8,16 @@ type NftItemProps = {
   buyNft: (tokenId: number, value: number) => Promise<void>;
 }
 
-function shortifyAddress(address: string) {
-  return `0x****${address.slice(-4)}`
-}
-
 const NftItem: FunctionComponent<NftItemProps> = ({ item, buyNft }) => {
   return (
     <>
       <div className="flex-shrink-0">
-        <img
-          className={`h-full w-full object-cover`}
-          src={item.meta.image}
-          alt="New NFT"
-        />
+      <img
+        style={{ height: '640px', width: '640px' }}
+        className="object-cover"
+        src={item.meta.image}
+        alt="New NFT"
+      />
       </div>
       <div className="flex-1 bg-white p-6 flex flex-col justify-between">
         <div className="flex-1">
@@ -34,8 +31,7 @@ const NftItem: FunctionComponent<NftItemProps> = ({ item, buyNft }) => {
                 />
               </div>
               <div className="ml-3">
-                <p className="text-sm font-medium text-gray-700 group-hover:text-gray-900">Creator</p>
-                <p className="text-xs font-medium text-gray-500 group-hover:text-gray-700">{shortifyAddress(item.creator)}</p>
+                <p className="text-sm font-large text-gray-700 group-hover:text-gray-900">ARTIST</p>
               </div>
             </div>
             <p className="text-sm font-medium text-indigo-600">
