@@ -146,7 +146,7 @@ const NftCreate: NextPage = () => {
         const tx = await contract?.mintToken(
           nftURI,
           ethers.utils.parseEther(price),{
-            value: ethers.utils.parseEther(0.025.toString())
+            value: ethers.utils.parseEther(0.000025.toString())
           }
         )
         const res =  await toast.promise(
