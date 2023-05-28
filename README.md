@@ -1,39 +1,12 @@
-# TicketEase
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Web3 app URL:[TicketEase](https://ticket-ease.vercel.app/)  
+Github public repo:[TicketEase Repo](https://github.com/zzlinnn/TicketEase)
 
-## Getting Started
+## TicketEase
+We propose the development of an innovative web3 application that aims to revolutionize the ticketing experience for exclusive artist concerts. Our application will cater specifically to the fans of a particular artist, providing them with a unique and secure ticketing platform. By leveraging the power of blockchain technology, we will create unparalleled Non-Fungible Tokens (NFTs) as tickets, showcasing never-seen-before pictures of the artist. This will offer fans an extraordinary concert experience unlike any other.
 
-First, run the development server:
+We have chosen [aespa](https://www.smtown.com/artist/musician/10766) as the featured artist in our sample app prototype.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Help and resources 
+Our team mainly learned from this tutorial: 
+1. https://www.udemy.com/course/nft-marketplace-in-react-typescript-solidity-full-guide/learn/lecture/38048664?start=0#questions
+   
