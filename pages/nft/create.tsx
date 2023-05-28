@@ -143,25 +143,26 @@ const NftCreate: NextPage = () => {
         }
       })
 
-      const tx = await contract?.mintToken(
-        nftURI,
-        ethers.utils.parseEther(price),{
-          value: ethers.utils.parseEther(0.025.toString())
-        }
-      )
-      const res =  await toast.promise(
-        tx!.wait(), {
-          pending: "Minting NFT Token",
-          success: "NFT created",
-          error: "Minting error"
-        }
-      )
+        const tx = await contract?.mintToken(
+          nftURI,
+          ethers.utils.parseEther(price),{
+            value: ethers.utils.parseEther(0.025.toString())
+          }
+        )
+        const res =  await toast.promise(
+          tx!.wait(), {
+            pending: "Minting NFT Token",
+            success: "NFT created",
+            error: "Minting error"
+          }
+        )
 
 
     } catch(e: any) {
       console.error(e.message);
     }
   }
+
 
 
 
@@ -189,7 +190,7 @@ const NftCreate: NextPage = () => {
     </BaseLayout>
     )
   }
-  if ( account.data != "0x1f0631ade401dcC2cDeDdDD656E5a04eb588dfb9"){
+  if ( account.data != "0x22a126820726b7514C399B28707423465EF33a2D"){
     return (
       <BaseLayout>
          <div className="rounded-md bg-yellow-50 p-4 mt-10">
@@ -256,7 +257,8 @@ const NftCreate: NextPage = () => {
                         </label>
                         <div className="mt-1 flex rounded-md shadow-sm">
                           <input
-                            onChange={(e) => setNftURI(e.target.value)}
+                            onChange={
+                              (e) => setNftURI(e.target.value)}
                             type="text"
                             name="uri"
                             id="uri"
@@ -293,7 +295,7 @@ const NftCreate: NextPage = () => {
                           name="price"
                           id="price"
                           className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
-                          placeholder="0.8"
+                          placeholder="Set a price"
                         />
                       </div>
                     </div>

@@ -23,7 +23,7 @@ export default function Navbar() {
   const { network } = useNetwork();
   
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-white-800">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -54,11 +54,11 @@ export default function Navbar() {
                         key={item.name}
                         href={item.href}
                         legacyBehavior
-                        activeClass='bg-gray-900 text-white'
+                        activeClass='bg-gray-600 text-gray-100'
                       >
                         <a
                           className={
-                            'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                            'text-orange-300 hover:bg-gray-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
                           }
                           aria-current={item.current ? 'page' : undefined}
                         >
@@ -71,8 +71,8 @@ export default function Navbar() {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <div className="text-gray-300 self-center mr-2">
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-purple-100 text-purple-800">
-                    <svg className="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-400" fill="currentColor" viewBox="0 0 8 8">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
+                    <svg className="-ml-0.5 mr-1.5 h-2 w-2 text-green-800" fill="currentColor" viewBox="0 0 8 8">
                       <circle cx={4} cy={4} r={3} />
                     </svg>
                     { network.isLoading?
