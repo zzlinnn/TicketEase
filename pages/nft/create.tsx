@@ -28,9 +28,9 @@ const NftCreate: NextPage = () => {
     description: "",
     image: "",
     attributes: [
-      {trait_type: "attack", value: "0"},
-      {trait_type: "health", value: "0"},
-      {trait_type: "speed", value: "0"},
+      {trait_type: "Access Level", value: "0"},
+      {trait_type: "Seating Location", value: "0"},
+      {trait_type: "Lucky Digit", value: "0"},
     ]
   });
 
@@ -310,7 +310,7 @@ const NftCreate: NextPage = () => {
                         name="name"
                         id="name"
                         className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
-                        placeholder="My Nice NFT"
+                        placeholder="NFT Ticket Name"
                       />
                     </div>
                   </div>
@@ -326,7 +326,6 @@ const NftCreate: NextPage = () => {
                         name="description"
                         rows={3}
                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
-                        placeholder="Some nft description..."
                       />
                     </div>
                     <p className="mt-2 text-sm text-gray-500">
@@ -392,9 +391,6 @@ const NftCreate: NextPage = () => {
                       </div>
                     )}
                   </div>
-                  <p className="text-sm !mt-2 text-gray-500">
-                    Choose value from 0 to 100
-                  </p>
                 </div>
                 <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                   <button
